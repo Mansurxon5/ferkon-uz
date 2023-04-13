@@ -3,13 +3,16 @@ import Navbar from "./Components/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import { SlLocationPin } from "react-icons/sl";
 import { FiPhone } from "react-icons/fi";
+import { FaTelegram, FaRegEnvelope } from "react-icons/fa";
 import { TbTruckDelivery } from "react-icons/tb";
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Navigation, Pagination } from "swiper";
+import image from "./image/logo.png";
 
 function App() {
   useEffect(() => {
@@ -98,7 +101,7 @@ function App() {
             Наши продукты
           </div>
         </div>
-        <header className="flex justify-center items-center gap-5">
+        <header className="flex justify-center items-center gap-5 flex-wrap">
           <div
             className="item w-[200px] min-h-[320px] bg-white rounded-md pb-2"
             data-aos="zoom-in-up"
@@ -195,14 +198,14 @@ function App() {
             Фотогалерея
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full" data-aos="zoom-in">
           <Swiper
             className="swiper-images w-[70%]"
+            modules={[EffectCoverflow, Pagination, Navigation]}
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={"auto"}
-            navigation={true}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
@@ -211,50 +214,140 @@ function App() {
             }}
             loop={true}
             spaceBetween={30}
-            pagination={{ pagination: true, clickable: true }}
-            modules={[EffectCoverflow, Pagination]}
+            navigation={{ navigation: true }}
           >
             <SwiperSlide className="swiper-slide">
               <img
-                src="https://swiperjs.com/demos/images/nature-1.jpg"
-                // className="w-[200px] h-[300px]"
+                src="https://ferkon.netlify.app/static/media/1.28c6aa33a4d950a7bd98.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
               />
             </SwiperSlide>
             <SwiperSlide className="swiper-slide">
               <img
-                src="https://swiperjs.com/demos/images/nature-2.jpg"
-                // className="w-[200px] h-[300px]"
+                src="https://ferkon.netlify.app/static/media/2.512cf33a1698e6e7394d.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
               />
             </SwiperSlide>
             <SwiperSlide className="swiper-slide">
               <img
-                src="https://swiperjs.com/demos/images/nature-3.jpg"
-                // className="w-[200px] h-[300px]"
+                src="https://ferkon.netlify.app/static/media/3.3e7e364e7337da8818ae.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
               />
             </SwiperSlide>
             <SwiperSlide className="swiper-slide">
               <img
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-                // className="w-[200px] h-[300px]"
+                src="https://ferkon.netlify.app/static/media/4.4481f7c9f6de16651e57.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
               />
             </SwiperSlide>
             <SwiperSlide className="swiper-slide">
               <img
-                src="https://swiperjs.com/demos/images/nature-5.jpg"
-                className="w-[200px] h-[300px]"
+                src="https://ferkon.netlify.app/static/media/5.aba74d0f77396266e950.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <img
+                src="https://ferkon.netlify.app/static/media/4.4481f7c9f6de16651e57.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <img
+                src="https://ferkon.netlify.app/static/media/5.aba74d0f77396266e950.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <img
+                src="https://ferkon.netlify.app/static/media/6.365578d64b8a17f9e194.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <img
+                src="https://ferkon.netlify.app/static/media/7.3c35aa35b05ca1569012.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <img
+                src="https://ferkon.netlify.app/static/media/8.491d1324b3583e827cdd.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
+              />
+            </SwiperSlide>
+            <SwiperSlide className="swiper-slide">
+              <img
+                src="https://ferkon.netlify.app/static/media/9.8b87bfa830809ebcca3a.jpg"
+                className="w-[200px] h-[300px] border-none object-cover"
               />
             </SwiperSlide>
           </Swiper>
         </div>
       </div>
-      <div className="w-full min-h-[50vh]">
-        <div className="w-[45%] flex justify-center items-center min-h-[15vh]">
-          <div className="px-2 border-l-[3px] text-4xl font-bold border-l-orange-400">
-            Свяжитесь с нами
+      <div className="w-full min-h-[45vh] mt-10 bg-[#F0F0F0] flex flex-col justify-center gap-4 items-end">
+        <div className="w-full min-h-[10vh]">
+          <div className="w-[45%] flex justify-center items-center min-h-[15vh]">
+            <div className="px-2 border-l-[3px] text-4xl font-bold border-l-orange-400">
+              Партнеры
+            </div>
           </div>
         </div>
-        <div className="w-[80%]">
-          <div className="left flex flex-col gap-5 pl-[130px]">
+        <div
+          className="w-[90%]  flex justify-center items-center"
+          data-aos="zoom-in-up"
+        >
+          <Swiper
+            modules={[Pagination, Navigation]}
+            slidesPerView={3}
+            spaceBetween={30}
+            navigation={{ navigation: true }}
+            className="mySwipers w-[100%] h-[20vh] flex justify-center items-center flex-col "
+          >
+            <SwiperSlide className="flex justify-center items-center flex-shrink-0 relative h-full  w-[200px]">
+              <img
+                src="https://ferkon.netlify.app/image/partnors/ruxsor.png"
+                alt=""
+              />
+            </SwiperSlide>
+            <SwiperSlide className="flex justify-center items-center flex-shrink-0 relative h-full  w-[200px]">
+              <img
+                src="https://ferkon.netlify.app/image/partnors/gold.png"
+                alt=""
+              />
+            </SwiperSlide>
+            <SwiperSlide className="flex justify-center items-center flex-shrink-0 relative h-full  w-[200px]">
+              <img
+                src="https://ferkon.netlify.app/image/partnors/ruxsor-radio.png"
+                alt=""
+              />
+            </SwiperSlide>
+            <SwiperSlide className="flex justify-center items-center flex-shrink-0 relative h-full  w-[200px]">
+              <img
+                src="https://ferkon.netlify.app/image/partnors/madad.png"
+                alt=""
+              />
+            </SwiperSlide>
+            <SwiperSlide className="flex justify-center items-center flex-shrink-0 relative h-full  w-[200px]">
+              <img
+                src="https://ferkon.netlify.app/image/partnors/madad.png"
+                alt=""
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
+      <div className="w-full min-h-[50vh] flex justify-center items-center">
+        <div className="w-[90%] gap-7 justify-center items-center  flex ">
+          <div
+            className="left flex flex-col gap-5 pl-[110px]"
+            data-aos="fade-right"
+          >
+            <div className="w-[80%] flex justify-center items-center min-h-[15vh] pb-24">
+              <div className="px-2 border-l-[3px] text-4xl font-bold border-l-orange-400">
+                Свяжитесь с нами
+              </div>
+            </div>
             <div className="flex gap-10 items-center">
               <SlLocationPin className="text-xl" />
               <span>Ферганская обл. г. Фергана, ул. Шароф Рашидова, 1</span>
@@ -272,12 +365,18 @@ function App() {
               <span>Ферганская обл. г. Фергана, ул. Шароф Рашидова, 1</span>
             </div>
           </div>
-          <div className="right">
-            <div style={{ height: "100vh", width: "100%" }}>
+          <div
+            className="right pb-5 flex justify-center items-center"
+            data-aos="fade-left"
+          >
+            <div
+              style={{ height: "80vh", width: "100%" }}
+              className="flex pl-10 justify-center items-center"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10951302.680898618!2d50.75889833789629!3d47.92365684089219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb83a1d3b8a26b%3A0x27d5a00b9ecc0d36!2sFer%20Kon%20Textile!5e0!3m2!1sru!2s!4v1681303207634!5m2!1sru!2s"
-                width="600"
-                height="450"
+                width="500"
+                height="350"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
@@ -287,6 +386,23 @@ function App() {
           </div>
         </div>
       </div>
+      <footer className="w-full min-h-[25vh] bg-[#555]">
+        <div
+          className="footer-page flex justify-evenly items-center min-h-[25vh]"
+          data-aos="zoom-in-down"
+        >
+          <div className="page-left text-white flex items-center text-lg gap-2">
+            <img src={image} alt="" className="w-[35px] h-[35px] rounded-md" />
+            <span>
+              Производит высоко качественные гофрокартоны гофроящики и конусы.
+            </span>
+          </div>
+          <div className="page-right flex  gap-4 text-white text-4xl">
+            <FaTelegram />
+            <FaRegEnvelope />
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
